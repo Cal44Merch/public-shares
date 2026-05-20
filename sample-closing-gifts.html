@@ -416,7 +416,7 @@ footer {
 .scroll-progress {
   position: fixed;
   top: 0; left: 0;
-  height: 3px;
+  height: 6px;
   width: 100%;
   background: transparent;
   z-index: 100;
@@ -440,6 +440,13 @@ footer {
   padding: 16px 0 16px 18px;
   border-left: 1px solid var(--line);
   font-family: var(--font-sans);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 160ms ease;
+}
+.toc.is-visible {
+  opacity: 1;
+  visibility: visible;
 }
 .toc-label {
   font-family: var(--font-sans);
@@ -673,16 +680,36 @@ footer {
 (function () {
   // Scroll progress bar
   var fill = document.getElementById('scroll-progress-fill');
+  var article = document.querySelector('.article-body');
+  var toc = document.querySelector('.toc');
+
+  function articleBounds() {
+    var rect = article.getBoundingClientRect();
+    var top = rect.top + window.scrollY;
+    return { top: top, height: article.offsetHeight, bottom: top + article.offsetHeight };
+  }
+
   function updateProgress() {
-    var doc = document.documentElement;
-    var scrollTop = window.scrollY || doc.scrollTop;
-    var max = (doc.scrollHeight - doc.clientHeight);
-    var pct = max > 0 ? Math.min(100, Math.max(0, (scrollTop / max) * 100)) : 0;
+    var b = articleBounds();
+    var viewportBottom = window.scrollY + window.innerHeight;
+    var pct = ((viewportBottom - b.top) / b.height) * 100;
+    pct = Math.min(100, Math.max(0, pct));
     fill.style.width = pct + '%';
   }
-  window.addEventListener('scroll', updateProgress, { passive: true });
-  window.addEventListener('resize', updateProgress);
-  updateProgress();
+
+  function updateTocVisibility() {
+    var b = articleBounds();
+    var y = window.scrollY;
+    var viewportBottom = y + window.innerHeight;
+    // Visible while any of article overlaps viewport. Hidden before article enters or after it leaves.
+    var inRange = (viewportBottom > b.top + 80) && (y + 80 < b.bottom);
+    toc.classList.toggle('is-visible', inRange);
+  }
+
+  function onScroll() { updateProgress(); updateTocVisibility(); }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
 
   // TOC active-section highlighting
   var tocLinks = document.querySelectorAll('.toc a');
