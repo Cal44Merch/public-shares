@@ -701,8 +701,9 @@ footer {
     var b = articleBounds();
     var y = window.scrollY;
     var viewportBottom = y + window.innerHeight;
-    // Visible while any of article overlaps viewport. Hidden before article enters or after it leaves.
-    var inRange = (viewportBottom > b.top + 80) && (y + 80 < b.bottom);
+    // Visible ONLY when article body fully spans viewport top-to-bottom.
+    // Hidden while article header still on-screen, hidden once CTA band entered.
+    var inRange = (b.top <= y + 24) && (b.bottom >= viewportBottom - 24);
     toc.classList.toggle('is-visible', inRange);
   }
 
