@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>What law firms actually give at a closing — and what they should. | FortyFour</title>
+<meta name="description" content="Most closing gifts from law firms miss because they're chosen for the partner, not the client. A practical guide to what works, what doesn't, and why." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  /* Color */
+  --teal:        #009CC8;
+  --teal-deep:   #007898;
+  --teal-tint:   #E0F4F9;
+  --ink:         #1A1919;
+  --paper:       #F5EFE5;
+  --paper-rule:  #D4C9AE;
+  --white:       #FFFFFF;
+  --muted:       #5E5E5E;
+  --quiet:       #8A8A8A;
+  --line:        #D4D4D2;
+  --grey-bg:     #F4F4F2;
+
+  /* Type */
+  --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+  --fw-extra:    800;
+  --fw-black:    900;
+
+  --fs-display-xl: clamp(56px, 6.4vw, 72px);
+  --fs-display-lg: 48px;
+  --fs-h2: 22px;
+  --fs-h3: 17px;
+  --fs-h4: 13px;
+  --fs-eyebrow: 11px;
+  --fs-deck: 19px;
+  --fs-body: 17px;
+  --fs-meta: 11px;
+  --fs-caps-mini: 10px;
+}
+
+/* Reset */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: 1.65;
+  font-weight: var(--fw-medium);
+  color: var(--ink);
+  background: var(--white);
+}
+a { color: var(--teal); text-decoration: none; }
+a:hover { color: var(--teal-deep); text-decoration: underline; text-underline-offset: 3px; }
+
+/* --- Utility bar + main nav (component 06 pattern A: two bars) --- */
+.utility-bar {
+  background: var(--ink);
+  color: var(--white);
+  font-family: var(--font-sans);
+  font-size: var(--fs-meta);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 8px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.utility-bar .left { display: flex; gap: 24px; align-items: center; }
+.utility-bar .left .dot { color: var(--teal); font-weight: 900; }
+.utility-bar a { color: var(--white); }
+.utility-bar a:hover { color: var(--teal); text-decoration: none; }
+
+.main-nav {
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  padding: 18px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand-mark {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-black);
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.brand-mark .period { color: var(--teal); }
+.main-nav ul {
+  display: flex; gap: 32px; list-style: none; margin: 0; padding: 0;
+}
+.main-nav ul a {
+  color: var(--ink);
+  font-weight: var(--fw-semibold);
+  font-size: 14px;
+}
+.main-nav ul a:hover { color: var(--teal); text-decoration: none; }
+
+/* --- Pill CTA --- */
+.ff-pill {
+  background: var(--teal);
+  color: var(--ink);
+  border: 2px solid var(--teal);
+  padding: 7px 4px 7px 16px;
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: var(--fw-extra);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.ff-pill::after {
+  content: "→";
+  width: 22px; height: 22px;
+  background: var(--ink);
+  color: var(--teal);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 900;
+}
+.ff-pill:hover { background: var(--teal-deep); border-color: var(--teal-deep); color: var(--white); text-decoration: none; }
+.ff-pill:hover::after { background: var(--white); color: var(--teal-deep); }
+
+/* --- Article header --- */
+.article-header {
+  position: relative;
+  overflow: hidden;
+  background: var(--white);
+  padding: 64px 32px 56px;
+  border-bottom: 1px solid var(--line);
+}
+.article-header::before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0;
+  width: 220px; height: 180px;
+  background-image: radial-gradient(circle, rgba(0,156,200,0.55) 1.4px, transparent 1.5px);
+  background-size: 11px 11px;
+  mask-image: radial-gradient(ellipse at top right, black 0%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at top right, black 0%, transparent 70%);
+  pointer-events: none;
+}
+.article-header-inner { max-width: 760px; margin: 0 auto; position: relative; }
+
+.breadcrumb {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: var(--fw-extra);
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 28px;
+  line-height: 2;
+}
+.breadcrumb a { color: var(--ink); }
+.breadcrumb a:hover { color: var(--teal-deep); text-decoration: none; }
+.breadcrumb .sep { color: var(--teal); margin: 0 12px; font-weight: 900; }
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--fs-eyebrow);
+  font-weight: var(--fw-extra);
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 16px;
+}
+
+.article-h1 {
+  font-family: var(--font-sans);
+  font-size: clamp(40px, 5vw, 56px);
+  font-weight: var(--fw-black);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  margin: 0 0 24px;
+  color: var(--ink);
+}
+.article-h1 .period { color: var(--teal); }
+
+.deck {
+  font-family: var(--font-sans);
+  font-size: var(--fs-deck);
+  font-weight: var(--fw-medium);
+  line-height: 1.5;
+  color: var(--muted);
+  margin: 0 0 32px;
+  max-width: 640px;
+}
+
+.byline {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+.byline-avatar {
+  width: 44px; height: 44px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--teal);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-weight: var(--fw-black);
+  font-size: 14px;
+  letter-spacing: 0.02em;
+}
+.byline-text { display: flex; flex-direction: column; line-height: 1.4; }
+.byline-name { font-weight: var(--fw-bold); font-size: 15px; color: var(--ink); }
+.byline-role {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--fw-semibold);
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.byline-meta {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--fw-semibold);
+  color: var(--quiet);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* --- Article body --- */
+.article-body {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 64px 32px 80px;
+}
+.article-body.md p {
+  font-size: var(--fs-body);
+  line-height: 1.7;
+  margin: 0 0 22px;
+  color: var(--ink);
+}
+.article-body.md p:first-child::first-letter {
+  font-weight: var(--fw-black);
+  font-size: 64px;
+  float: left;
+  line-height: 0.9;
+  padding: 6px 12px 0 0;
+  color: var(--ink);
+}
+.article-body.md h2 {
+  font-family: var(--font-sans);
+  font-size: 28px;
+  font-weight: var(--fw-black);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  margin: 56px 0 18px;
+  color: var(--ink);
+}
+.article-body.md h2 .period { color: var(--teal); }
+.article-body.md h3 {
+  font-family: var(--font-sans);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-extra);
+  line-height: 1.3;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 40px 0 14px;
+}
+.article-body.md h3::after { content: "."; color: var(--teal); }
+.article-body.md p strong,
+.article-body.md li strong {
+  border-bottom: 2px solid var(--teal);
+  padding-bottom: 1px;
+  font-weight: var(--fw-bold);
+}
+.article-body.md ul { padding-left: 22px; margin: 0 0 22px; }
+.article-body.md li { margin-bottom: 10px; line-height: 1.65; }
+
+/* Spec / pull block */
+.spec-block {
+  background: var(--paper);
+  border-left: 3px solid var(--teal);
+  padding: 24px 28px;
+  margin: 40px 0;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ink);
+}
+.spec-block .spec-label {
+  display: block;
+  font-size: 10px;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--teal-deep);
+  margin-bottom: 8px;
+}
+.spec-block .row {
+  display: flex;
+  gap: 18px;
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--paper-rule);
+}
+.spec-block .row:last-child { border-bottom: 0; }
+.spec-block .k { color: var(--muted); min-width: 140px; }
+.spec-block .v { color: var(--ink); font-weight: var(--fw-semibold); }
+
+/* Pull quote */
+.pull {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-black);
+  font-size: 26px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  padding: 28px 0;
+  margin: 48px 0;
+}
+.pull .period { color: var(--teal); }
+
+/* End CTA band */
+.cta-band {
+  position: relative;
+  overflow: hidden;
+  background: var(--ink);
+  color: var(--white);
+  padding: 64px 32px;
+}
+.cta-band::before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0;
+  width: 220px; height: 180px;
+  background-image: radial-gradient(circle, rgba(0,156,200,0.34) 1.4px, transparent 1.5px);
+  background-size: 11px 11px;
+  mask-image: radial-gradient(ellipse at top right, black 0%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at top right, black 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-inner { max-width: 760px; margin: 0 auto; position: relative; }
+.cta-band .eyebrow { color: var(--teal); margin-bottom: 12px; }
+.cta-band h2 {
+  font-family: var(--font-sans);
+  font-size: clamp(32px, 4vw, 44px);
+  font-weight: var(--fw-black);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  text-transform: none;
+  margin: 0 0 16px;
+  color: var(--white);
+}
+.cta-band h2 .period { color: var(--teal); }
+.cta-band p {
+  color: rgba(255,255,255,0.78);
+  max-width: 540px;
+  margin: 0 0 28px;
+  font-size: 16px;
+}
+
+/* Footer with slash labels */
+footer {
+  background: var(--white);
+  border-top: 1px solid var(--line);
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.slash-labels {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: var(--fw-extra);
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--ink);
+  line-height: 2;
+}
+.slash-labels a { color: var(--ink); }
+.slash-labels a:hover { color: var(--teal-deep); text-decoration: none; }
+.slash-labels .sep { color: var(--teal); margin: 0 12px; font-weight: 900; }
+.footer-mark {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--fw-semibold);
+  color: var(--quiet);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 720px) {
+  .utility-bar { padding: 8px 20px; font-size: 10px; }
+  .utility-bar .right { display: none; }
+  .main-nav { padding: 16px 20px; }
+  .main-nav ul { display: none; }
+  .article-header { padding: 40px 20px 36px; }
+  .article-body { padding: 40px 20px 56px; }
+  .cta-band { padding: 48px 20px; }
+  footer { padding: 24px 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Utility bar -->
+<div class="utility-bar">
+  <div class="left">
+    <span>Houston <span class="dot">/</span> Texas <span class="dot">/</span> Southern US</span>
+  </div>
+  <div class="right">
+    <a href="#">Sales <span style="color: var(--teal);">·</span> 832-555-4400</a>
+  </div>
+</div>
+
+<!-- Main nav -->
+<nav class="main-nav">
+  <a href="#" class="brand-mark">FortyFour<span class="period">.</span></a>
+  <ul>
+    <li><a href="#">Shop</a></li>
+    <li><a href="#">Sectors</a></li>
+    <li><a href="#">Process</a></li>
+    <li><a href="#">Journal</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <a href="#" class="ff-pill">Let's talk</a>
+</nav>
+
+<!-- Article header -->
+<header class="article-header">
+  <div class="article-header-inner">
+    <div class="breadcrumb">
+      <a href="#">Journal</a><span class="sep">/</span><a href="#">Professional Services</a><span class="sep">/</span><span>Closing Gifts</span>
+    </div>
+    <div class="eyebrow">Sector guide · Law firms</div>
+    <h1 class="article-h1">What law firms actually give at a closing — and what they should<span class="period">.</span></h1>
+    <p class="deck">Most closing gifts from law firms miss because they're chosen for the partner, not the client. A practical guide to what works, what doesn't, and why the leather notebook keeps winning.</p>
+    <div class="byline">
+      <span class="byline-avatar">JW</span>
+      <span class="byline-text">
+        <span class="byline-name">James Whelan</span>
+        <span class="byline-role">Sector lead, professional services</span>
+      </span>
+      <span class="byline-meta">8 min read · May 2026</span>
+    </div>
+  </div>
+</header>
+
+<!-- Article body -->
+<article class="article-body md">
+
+  <p>The closing gift is a small object that has to do a large job. It marks the end of a matter — a deal closed, a case resolved, an estate settled — and it stands in for the years of trust the firm wants the client to remember when the next matter comes up. Most firms get the job partly right and the object mostly wrong.</p>
+
+  <p>The pattern I see, across eight years of fulfilling these orders, looks roughly the same in every market. A partner picks something they would personally like. The marketing coordinator orders it. The client opens it, sets it on a shelf, and remembers nothing about the firm except that the gift was generous, which is not the same thing as being remembered.</p>
+
+  <p>There's a better way to think about this — and it has nothing to do with spending more.</p>
+
+  <h2>Start with what a closing gift is actually for<span class="period">.</span></h2>
+
+  <p>A closing gift is not a thank-you. The invoice is the thank-you. The gift is a <strong>memory anchor</strong> — a physical object the client will encounter again, in their office or their home, that quietly re-surfaces the firm's name at the moment they next need a lawyer.</p>
+
+  <p>That framing changes the brief entirely. The object doesn't need to be impressive at the moment of receipt. It needs to be present in the client's daily life six, twelve, eighteen months later. A bottle of bourbon is a great gift and a terrible memory anchor. It's gone in a fortnight.</p>
+
+  <h2>The three categories that work — and the one that doesn't<span class="period">.</span></h2>
+
+  <p>For law-firm closing programmes specifically, I put gift candidates into four buckets. Three of them I recommend; one of them I'd ask you to reconsider.</p>
+
+  <h3>1. Desk-resident objects</h3>
+  <p>Leather-bound notebooks. Heavy-stock padfolios. Refillable pens of the kind a senior partner wouldn't be embarrassed to use in a deposition. These objects live on a desk for years. They quietly carry the firm's mark — and crucially, the client sees them when they pick up the phone to call about their next matter.</p>
+
+  <p>This is the category we recommend most often, and the leather-bound notebook is the workhorse. Done well, it lasts five years. Done badly — thin grain, glued spine, embossing that fades — it lasts six weeks.</p>
+
+  <h3>2. Home-resident objects</h3>
+  <p>A heavy crystal old-fashioned glass. A walnut cheese board with a discrete brass plate. A cashmere throw with a sewn-in label. These are slower memory anchors, but they reach the client's spouse and visitors — people who may also need a lawyer, or know someone who does. The downside is cost and the risk of taste mismatch. Reserve this category for matters above a clear AOV threshold (we suggest $300+ per gift) and for relationships you actually know well.</p>
+
+  <h3>3. Ritualised consumables — with a permanent shell</h3>
+  <p>Loose-leaf tea with a branded tin. Single-origin coffee with a hand-built ceramic dripper. The consumable is the warm gesture; the shell becomes the desk-resident object after the consumable is gone. This is the most overlooked category in our experience, and it punches well above its budget.</p>
+
+  <h3>4. The category to reconsider</h3>
+  <p>Generic drinkware with a logo, gift baskets of branded snacks, the box of branded chocolates with the firm's website embossed on the lid. There's nothing wrong with these as B2B gestures in other contexts. But for a closing — a moment a client is actively measuring how seriously the firm takes the relationship — they read as low-effort. Most firms know this. Most order them anyway because the per-unit cost is comfortable.</p>
+
+  <p>The honest reframe: if your closing-gift budget is $50 a client, do something thoughtful in category three. Don't do something forgettable in category four.</p>
+
+  <h2>How budget should actually scale<span class="period">.</span></h2>
+
+  <p>Spend should track <strong>matter significance</strong>, not headcount. A firm closing a $40M real estate deal should not give the same gift it gives at the close of a routine contract dispute. A two-tier or three-tier programme works far better than a single-SKU programme — but only if the firm is disciplined about the tiering criteria. Without criteria, every matter becomes a tier-one matter, which is the same as having no tiers at all.</p>
+
+  <div class="spec-block">
+    <span class="spec-label">Suggested tiering — closing-gift programme</span>
+    <div class="row"><span class="k">Tier 1 — major</span><span class="v">$250–$500 · home-resident · personalised</span></div>
+    <div class="row"><span class="k">Tier 2 — standard</span><span class="v">$80–$150 · desk-resident · firm-marked</span></div>
+    <div class="row"><span class="k">Tier 3 — routine</span><span class="v">$30–$60 · consumable + shell</span></div>
+    <div class="row"><span class="k">Decoration method</span><span class="v">Foil deboss or laser-etch, not screen print</span></div>
+    <div class="row"><span class="k">Lead time</span><span class="v">3–5 weeks from approved artwork</span></div>
+  </div>
+
+  <h2>The decoration choice that quietly ruins the gift<span class="period">.</span></h2>
+
+  <p>This is the one detail I would push you on more than any other. The decoration method matters more than the underlying object for one simple reason — a beautiful notebook with a screen-printed logo reads as cheaper than a mid-tier notebook with a clean foil deboss. The eye reads the decoration first and ranks the entire gift from there.</p>
+
+  <p>For law firms specifically, the defensible defaults are:</p>
+
+  <ul>
+    <li><strong>Foil deboss</strong> on leather, paper, and fabric. Costs more in setup, almost nothing per unit at quantity. Reads timeless.</li>
+    <li><strong>Laser etching</strong> on wood, metal, and glass. Same logic — the mark is part of the object, not stuck to it.</li>
+    <li><strong>Embroidery</strong> only on textile items where it belongs, and at high stitch counts. Cheap embroidery shows.</li>
+  </ul>
+
+  <p>What I'd avoid for a closing: full-colour digital print, sticker labels, large logos. The instinct to "make the firm visible" is the instinct that quietly downgrades the gift.</p>
+
+  <div class="pull">A beautiful notebook with a screen-printed logo reads as cheaper than a mid-tier notebook with a clean foil deboss<span class="period">.</span></div>
+
+  <h2>One practical recommendation<span class="period">.</span></h2>
+
+  <p>If you take one thing from this piece, take this — before you reorder whatever your firm gave last year, ask three of last year's clients what they did with it. Not whether they liked it. What they did with it. If two of the three can't remember, the object failed its only job, and the budget would be better spent on a smaller number of better objects, decorated more carefully, given against a clearer tier.</p>
+
+  <p>A note before we close — I'm writing this from the supplier side, which means I have an obvious bias against you spending less. Read accordingly. But the bias I have against generic gift baskets is older than my time in this industry, and I'd hold to it whether you bought from us or not.</p>
+
+</article>
+
+<!-- CTA band (dark, halftone) -->
+<section class="cta-band">
+  <div class="cta-inner">
+    <div class="eyebrow">Build a programme</div>
+    <h2>A closing-gift programme that holds up across 200 matters a year<span class="period">.</span></h2>
+    <p>We build tiered closing-gift programmes for Texas law firms — sourcing, decoration, fulfilment, and reorder workflow. One brief, one supplier, one decoration spec across the firm.</p>
+    <a href="#" class="ff-pill">Talk to James</a>
+  </div>
+</section>
+
+<!-- Footer with slash labels -->
+<footer>
+  <nav class="slash-labels">
+    <a href="#">Shop</a><span class="sep">/</span>
+    <a href="#">Sectors</a><span class="sep">/</span>
+    <a href="#">Process</a><span class="sep">/</span>
+    <a href="#">Journal</a><span class="sep">/</span>
+    <a href="#">Contact</a>
+  </nav>
+  <span class="footer-mark">FortyFour Merchandise · Houston, TX</span>
+</footer>
+
+</body>
+</html>
