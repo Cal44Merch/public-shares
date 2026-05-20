@@ -701,10 +701,10 @@ footer {
     var b = articleBounds();
     var y = window.scrollY;
     var viewportBottom = y + window.innerHeight;
-    // Visible ONLY when article body fully spans viewport top-to-bottom.
-    // Hidden while article header still on-screen, hidden once CTA band entered.
-    var inRange = (b.top <= y + 24) && (b.bottom >= viewportBottom - 24);
-    toc.classList.toggle('is-visible', inRange);
+    // Visible once user nears article-top (200px before), hidden once article-bottom enters viewport.
+    var enteredArticle = (y + 200) >= b.top;
+    var beforeArticleEnd = b.bottom > (viewportBottom - 100);
+    toc.classList.toggle('is-visible', enteredArticle && beforeArticleEnd);
   }
 
   function onScroll() { updateProgress(); updateTocVisibility(); }
